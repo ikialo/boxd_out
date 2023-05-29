@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1008421143476",
+    "project_id": "takabox-1ecac",
+    "storage_bucket": "takabox-1ecac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008421143476:android:60e31a1168f21be582a8e1",
+        "android_client_info": {
+          "package_name": "com.example.taka_box"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008421143476-1j6ose1j51tfu3r8udqhjr4u1u2ulncc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKYTflYOXx8NRjtO_jcSs80OIcHcT_JNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008421143476-1j6ose1j51tfu3r8udqhjr4u1u2ulncc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
