@@ -221,7 +221,7 @@ class _WarehouseListProductState extends State<WarehouseListProduct> {
       builder: (context) {
         return Dialog(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(11.0),
           ),
           elevation: 10.0,
           child: Expanded(
