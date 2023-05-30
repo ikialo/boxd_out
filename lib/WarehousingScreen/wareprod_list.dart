@@ -196,7 +196,6 @@ class _WarehouseListProductState extends State<WarehouseListProduct> {
           },
         ),
       ),
-      floatingActionButton: AddProduct(),
     );
   }
 

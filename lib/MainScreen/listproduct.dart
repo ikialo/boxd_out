@@ -46,7 +46,6 @@ class _ListProductState extends State<ListProduct> {
             return Padding(
               padding: const EdgeInsets.only(left: 12, right: 12),
               child: Container(
-                  height: MediaQuery.of(context).size.height * .75,
                   child: GridView.builder(
                       itemCount: snapshot.data!.docs.length,
                       // physics: const NeverScrollableScrollPhysics(),

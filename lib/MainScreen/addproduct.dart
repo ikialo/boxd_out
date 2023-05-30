@@ -40,18 +40,14 @@ class _AddProductState extends State<AddProduct> {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        highlightColor: Colors.amberAccent,
-        color: Colors.amber,
-        onPressed: () {
-          buyDialog(context, "test", 12);
-          // db.collection("users").add(user).then((DocumentReference doc) =>
-          //     print('DocumentSnapshot added with ID: ${doc.id}'));
-        },
-        icon: Icon(
-          Icons.add_rounded,
-          color: Colors.amber,
-        ));
+    return FloatingActionButton(
+      onPressed: () {
+        buyDialog(context, "test", 12);
+        // db.collection("users").add(user).then((DocumentReference doc) =>
+        //     print('DocumentSnapshot added with ID: ${doc.id}'));
+      },
+      child: Icon(Icons.add),
+    );
   }
 
   buyDialog(BuildContext context, String service, int amount) {
@@ -77,222 +73,220 @@ class _AddProductState extends State<AddProduct> {
             borderRadius: BorderRadius.circular(12.0),
           ),
           elevation: 10.0,
-          child: Expanded(
-            child: Container(
-              width: width > 650 ? width / 2 : width,
-              height: MediaQuery.of(context).size.height - 100,
-              // height: 23.5.h,
-              // height: 210,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            kTertiaryColor4,
-                            kTertiaryColor3,
-                            kTertiaryColor2,
-                            kTertiaryColor,
-                          ],
-                        ),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(12.0),
-                          topLeft: Radius.circular(12.0),
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          //-------------------------------------- Pack Title
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              'Add Item',
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: kTertiaryColor5,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'NewYork',
-                                letterSpacing: 1.0,
-                              ),
-                            ),
-                          ),
-                          Divider(color: kTertiaryColor5),
-                          //----------------------------------------------- Features
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 1, horizontal: 1),
-                            child: Padding(
-                              padding: EdgeInsets.only(bottom: 1),
-                              child: Text(
-                                'Add an item to your product list',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'NewYork',
-                                  color: kTertiaryColor5,
-                                ),
-                              ),
-                            ),
-                          ),
+          child: Container(
+            width: width > 650 ? width / 2 : width,
+            height: MediaQuery.of(context).size.height - 100,
+            // height: 23.5.h,
+            // height: 210,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          kTertiaryColor4,
+                          kTertiaryColor3,
+                          kTertiaryColor2,
+                          kTertiaryColor,
                         ],
                       ),
-                    ),
-                    //------------------------------------    Buy Now
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: productCOnroller,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Product Name',
-                          hintText: 'hint',
-                        ),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(12.0),
+                        topLeft: Radius.circular(12.0),
                       ),
                     ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: descriptionController,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Product Description',
-                          hintText: 'hint',
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: lengthController,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Box Length',
-                          hintText: 'hint',
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: widthCOnroller,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Box Width',
-                          hintText: 'hint',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: heightController,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Box Height',
-                          hintText: 'hint',
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: caegoryController,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.blue.shade100,
-                          border: OutlineInputBorder(),
-                          labelText: 'Category',
-                          hintText: 'hint',
-                        ),
-                      ),
-                    ),
-
-                    Row(
+                    child: Column(
                       children: [
-                        IconButton(
-                          style: style,
-                          onPressed: () async {
-                            FilePickerResult? picked =
-                                await FilePicker.platform.pickFiles();
-
-                            if (picked != null) {
-                              print(picked.files.single.path);
-                              filepath_ =
-                                  File(picked.files.single.path.toString());
-
-                              setState(() {
-                                filepath = picked.files.single.name;
-                              });
-                            }
-                          },
-                          icon: Icon(Icons.image),
+                        //-------------------------------------- Pack Title
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'Add Item',
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: kTertiaryColor5,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'NewYork',
+                              letterSpacing: 1.0,
+                            ),
+                          ),
                         ),
-                        Text(filepath)
+                        Divider(color: kTertiaryColor5),
+                        //----------------------------------------------- Features
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 1, horizontal: 1),
+                          child: Padding(
+                            padding: EdgeInsets.only(bottom: 1),
+                            child: Text(
+                              'Add an item to your product list',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'NewYork',
+                                color: kTertiaryColor5,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                    Align(
-                        alignment: Alignment.bottomCenter,
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              uploadFile(filepath_, filepath).then((value) {
-                                print(value!.snapshot.ref.fullPath);
+                  ),
+                  //------------------------------------    Buy Now
 
-                                final prod_det = <String, dynamic>{
-                                  "product_name": productCOnroller.text,
-                                  "description": descriptionController.text,
-                                  "length": lengthController.text,
-                                  "width": widthCOnroller.text,
-                                  "height": heightController.text,
-                                  "category": caegoryController.text,
-                                  "imagePath": value.snapshot.ref.fullPath
-                                };
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: productCOnroller,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Product Name',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
 
-                                CollectionReference users = FirebaseFirestore
-                                    .instance
-                                    .collection('users')
-                                    .doc(user!.uid)
-                                    .collection('Product');
-                                users.add(prod_det).then((value) {
-                                  print("User Added");
-                                  Navigator.of(context).pop();
-                                }).catchError((error) =>
-                                    print("Failed to add user: $error"));
-                              });
-                            },
-                            child: Text('Upload')))
-                  ],
-                ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: descriptionController,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Product Description',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: lengthController,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Box Length',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: widthCOnroller,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Box Width',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: heightController,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Box Height',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: caegoryController,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.blue.shade100,
+                        border: OutlineInputBorder(),
+                        labelText: 'Category',
+                        hintText: 'hint',
+                      ),
+                    ),
+                  ),
+
+                  Row(
+                    children: [
+                      IconButton(
+                        style: style,
+                        onPressed: () async {
+                          FilePickerResult? picked =
+                              await FilePicker.platform.pickFiles();
+
+                          if (picked != null) {
+                            print(picked.files.single.path);
+                            filepath_ =
+                                File(picked.files.single.path.toString());
+
+                            setState(() {
+                              filepath = picked.files.single.name;
+                            });
+                          }
+                        },
+                        icon: Icon(Icons.image),
+                      ),
+                      Text(filepath)
+                    ],
+                  ),
+                  Align(
+                      alignment: Alignment.bottomCenter,
+                      child: ElevatedButton(
+                          onPressed: () async {
+                            uploadFile(filepath_, filepath).then((value) {
+                              print(value!.snapshot.ref.fullPath);
+
+                              final prod_det = <String, dynamic>{
+                                "product_name": productCOnroller.text,
+                                "description": descriptionController.text,
+                                "length": lengthController.text,
+                                "width": widthCOnroller.text,
+                                "height": heightController.text,
+                                "category": caegoryController.text,
+                                "imagePath": value.snapshot.ref.fullPath
+                              };
+
+                              CollectionReference users = FirebaseFirestore
+                                  .instance
+                                  .collection('users')
+                                  .doc(user!.uid)
+                                  .collection('Product');
+                              users.add(prod_det).then((value) {
+                                print("User Added");
+                                Navigator.of(context).pop();
+                              }).catchError((error) =>
+                                  print("Failed to add user: $error"));
+                            });
+                          },
+                          child: Text('Upload')))
+                ],
               ),
             ),
           ),
