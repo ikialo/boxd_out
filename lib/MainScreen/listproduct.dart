@@ -217,81 +217,79 @@ class _ListProductState extends State<ListProduct> {
             borderRadius: BorderRadius.circular(12.0),
           ),
           elevation: 10.0,
-          child: Expanded(
-            child: Container(
-              width: width > 650 ? width / 2 : width,
-              height: MediaQuery.of(context).size.height / 2,
-              // height: 23.5.h,
-              // height: 210,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            kTertiaryColor4,
-                            kTertiaryColor3,
-                            kTertiaryColor2,
-                            kTertiaryColor,
-                          ],
-                        ),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(12.0),
-                          topLeft: Radius.circular(12.0),
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          //-------------------------------------- Pack Title
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              'Scan QR Code',
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: kTertiaryColor5,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'NewYork',
-                                letterSpacing: 1.0,
-                              ),
-                            ),
-                          ),
-                          Divider(color: kTertiaryColor5),
-                          //----------------------------------------------- Features
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 1, horizontal: 1),
-                            child: Padding(
-                              padding: EdgeInsets.only(bottom: 1),
-                              child: Text(
-                                'Scan QR Code to Get Product Detail',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'NewYork',
-                                  color: kTertiaryColor5,
-                                ),
-                              ),
-                            ),
-                          ),
+          child: Container(
+            width: width > 650 ? width / 2 : width,
+            height: MediaQuery.of(context).size.height / 2,
+            // height: 23.5.h,
+            // height: 210,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          kTertiaryColor4,
+                          kTertiaryColor3,
+                          kTertiaryColor2,
+                          kTertiaryColor,
                         ],
                       ),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(12.0),
+                        topLeft: Radius.circular(12.0),
+                      ),
                     ),
-                    Align(
-                        alignment: Alignment.center,
-                        child: QRImage(user_id + ',' + product_id))
-                  ],
-                ),
+                    child: Column(
+                      children: [
+                        //-------------------------------------- Pack Title
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'Scan QR Code',
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: kTertiaryColor5,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'NewYork',
+                              letterSpacing: 1.0,
+                            ),
+                          ),
+                        ),
+                        Divider(color: kTertiaryColor5),
+                        //----------------------------------------------- Features
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(vertical: 1, horizontal: 1),
+                          child: Padding(
+                            padding: EdgeInsets.only(bottom: 1),
+                            child: Text(
+                              'Scan QR Code to Get Product Detail',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'NewYork',
+                                color: kTertiaryColor5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Align(
+                      alignment: Alignment.center,
+                      child: QRImage(user_id + ',' + product_id))
+                ],
               ),
             ),
           ),
